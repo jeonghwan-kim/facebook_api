@@ -1,15 +1,9 @@
-파일 설명
-========
-* facebook-redirect.php
-* Customer key, redirect address 등 설정하여...
+## Usage
 
-facebook-access.php
-* 서비스로부터 access key 를 받아옴. (임시로 세션에 저장)
+1. facebook에서 앱ID key와 앱시크릿 코드를 발급 수령
+2. `facebook-redirect.php`에 해당 정보 입력 및 `facebook-access.php` 파일 경로 수정
+3. `facebook-access.php` 파일에 해당 정보 입력: access key 발급
+4. 예시 파일 (`facebook-example-1.php`, `facebook-example-2.php`)에도 해당 정보 입력후 실행
 
-facebook-example-1.php, facebook-example-2.php
-* 위 두 파일로 인증절차 거친후 실제 하고자하는 작업 실시 (데이터 가져오기)
-
-응용 방법
-========
-* facebook-redirect.php -> facebook-access.php -> 하고자하는 작업 실시
-* 위 흐름대로 작업하여 한 파일로 작성할 수도 있다.
+## 참고
+https://developers.facebook.com/docs/reference/api/
