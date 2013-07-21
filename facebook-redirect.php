@@ -1,8 +1,8 @@
 <?php
 
-// 변수 설정 등
+require_once("./facebook-api-key.php");
 
-$consumer_key = 'Insert consumer key';
+// 변수 설정 등
 $domain = 'http://' . $_SERVER['HTTP_HOST'] . '/';
  
 // 파라미터
