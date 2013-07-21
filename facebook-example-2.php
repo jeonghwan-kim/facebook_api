@@ -12,21 +12,10 @@ $connection = new FacebookOAuth($consumer_key, $consumer_secret, $_SESSION['toke
  
 
 // ========================================================
-// Example 2. 내가 작성한 글 보기 (댓글 포함)
+// Example 2. 내가 작성한 글 보기
 // ========================================================
-$feed = $connection->get('me/?fields=feed.limit(10).fields(message,story,from,actions)');
-
-$no = 0;
-foreach ($feed->feed->data as $data) {
-		if ($data->story || $data->message ) {
-			$post_link = $data->actions[0]->link;
-			print("[" . $no++ . "]" 
-				. $data->created_time . " : " 
-				. $data->message 
-				. $data->story 
-				. " (by ". $data->from->name . " ) " 
-				. "<a href=" . $post_link . ">link</a><br />");
-		}
-}
+$message = $connection->get('me?fields=statuses.limit(100).fields(message)');
+header ("Content-Type: application/json");
+echo json_encode($message->statuses);
 
 ?>
