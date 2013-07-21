@@ -13,7 +13,7 @@ $connection = new FacebookOAuth($consumer_key, $consumer_secret, $_SESSION['toke
 // ========================================================
 // Example 2. 내가 작성한 글 보기
 // ========================================================
-$message = $connection->get('me?fields=statuses.limit(100).fields(message)');
+$message = $connection->get('me?fields=statuses.fields(message).since(2009-01-01).until(2013-07-21).limit(1000)');
 header ("Content-Type: application/json");
 echo json_encode($message->statuses);
 
