@@ -15,7 +15,4 @@ $access_token = $connection->getAccessToken($_REQUEST['code']);
 $token = $access_token['oauth_token'];
 $_SESSION['token'] = $token; // 세션에 저장
 
-$uri = './facebook-example-1.php';
-header('Location: ' . $uri);
-
 ?>
