@@ -13,7 +13,8 @@ $connection = new FacebookOAuth($consumer_key, $consumer_secret, $_SESSION['toke
 // ========================================================
 // Example 2. 내가 작성한 글 보기
 // ========================================================
-$message = $connection->get('me?fields=statuses.fields(message).since(2009-01-01).until(2013-07-21).limit(1000)');
+$message = $connection->get('me?fields=statuses.limit(5000).fields(message).since(2009-01-01).until(2013-07-22)');
+  // until(a) 는 a 전날까지를 의미
 header ("Content-Type: application/json");
 echo json_encode($message->statuses);
 
